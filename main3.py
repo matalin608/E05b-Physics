@@ -51,13 +51,22 @@ class Window(arcade.Window):
             collisions = a.collides_with_list(self.animal_list)
             for c in collisions:
                 if a.center_x > c.center_x:
-                    a.dx = abs(a.dx) * -1
+                    x = a.dx
+                    a.dx = c.dx
+                    c.dx = x 
                 if a.center_x < c.center_x:
-                    a.dx = abs(a.dx)
+                    x = a.dx
+                    a.dx = c.dx
+                    c.dx = x 
                 if a.center_y > c.center_y:
-                    a.dy = abs(a.dy)
+                    x = a.dy
+                    a.dy = c.dy
+                    c.dy = x 
                 if a.center_y < c.center_y:
-                    a.dy = abs(a.dy) * -1
+                    x = a.dy
+                    a.dy= c.dy
+                    c.dy = x 
+                    
 
 
 
